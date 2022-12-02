@@ -14,7 +14,7 @@ export const useUserData = () => {
             id_localidad: data.id_localidad,
             token: data.token
         });
-        localStorage.setItem("userData", JSON.stringify({
+        localStorage.setItem("userDeliveyData", JSON.stringify({
             userDataData: {
                 id_delivery_logged: data.id_delivery_logged,
                 nombre: data.nombre,
@@ -27,7 +27,7 @@ export const useUserData = () => {
         return;
     }
     const checkToken = () => {
-        const userData = localStorage.getItem("userData");
+        const userData = localStorage.getItem("userDeliveyData");
         if (!userData) {
             setUserData({
                 id_delivery_logged: "",
@@ -52,7 +52,7 @@ export const useUserData = () => {
         }
     }
     const logOutFn = () => {
-        localStorage.removeItem("userData");
+        localStorage.removeItem("userDeliveryData");
         setUserData(userDataInitialState);
         setIsLoggedIn(false);
         return;

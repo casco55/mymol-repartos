@@ -17,6 +17,7 @@ export const useLogin = (pathNameLogin, loginFormValidation, loginFn) => {
     }
     const postLogin = async () => {
         const response = await loginUser(URL_local, pathNameLogin, loginData);
+        console.log(response)
         if (response.internalStatus === 200) {
             loginFn(response.data);
             return
