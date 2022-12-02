@@ -1,0 +1,50 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+// index variables
+
+li {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.line {
+    height: 2px;
+    width: 90%;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.active-link {
+    color: rgb(165, 150, 203);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.z-index-10 {
+    z-index: 10;
+}
+
+.full-height {
+    min-height: 720px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.z-index-20 {
+    z-index: 20;
+}
+
+.bg-dark-semi {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+// position fixed right top
+.fixed-right-top {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
