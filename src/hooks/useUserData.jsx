@@ -12,6 +12,9 @@ export const useUserData = () => {
             nombre: data.nombre,
             apellido: data.apellido,
             id_localidad: data.id_localidad,
+            nombre_localidad: data.nombre_localidad,
+            id_clasificacion: data.id_clasificacion,
+            nombre_clasificacion: data.nombre_clasificacion,
             token: data.token
         });
         localStorage.setItem("userDeliveyData", JSON.stringify({
@@ -20,6 +23,9 @@ export const useUserData = () => {
                 nombre: data.nombre,
                 apellido: data.apellido,
                 id_localidad: data.id_localidad,
+                nombre_localidad: data.nombre_localidad,
+                id_clasificacion: data.id_clasificacion,
+                nombre_clasificacion: data.nombre_clasificacion,
                 token: data.token
             }
         }));
@@ -33,6 +39,10 @@ export const useUserData = () => {
                 id_delivery_logged: "",
                 nombre: "",
                 apellido: "",
+                id_localidad: "",
+                nombre_localidad: "",
+                id_clasificacion: "",
+                nombre_clasificacion: "",
                 token: ""
             });
             setIsLoggedIn(false);
@@ -45,6 +55,9 @@ export const useUserData = () => {
                 nombre: userDataData.nombre,
                 apellido: userDataData.apellido,
                 id_localidad: userDataData.id_localidad,
+                nombre_localidad: userDataData.nombre_localidad,
+                id_clasificacion: userDataData.id_clasificacion,
+                nombre_clasificacion: userDataData.nombre_clasificacion,
                 token: userDataData.token
             });
             setIsLoggedIn(true);

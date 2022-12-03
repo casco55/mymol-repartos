@@ -16,7 +16,7 @@ export const AppRouter = memo(({ isLoggedIn }) => {
             <Router>
                 <div className="row g-0">
                     {/* {isLoggedIn && <NavBar />} */}
-                    <div className={isLoggedIn ? 'col-10' : 'col-12'}>
+                    <div className="col-12 g-0">
                         <Routes basename="/">
                             <Route path="/login" element={<PublicRoute isLoggedIn={isLoggedIn} />} />
                             <Route path='/' element={<PrivateRoute isLoggedIn={isLoggedIn} />}>

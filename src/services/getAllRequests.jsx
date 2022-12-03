@@ -1,7 +1,6 @@
 import axios from "axios";
 
-export const getAllRequestsStates = async (url, pathName, token) => {
-
+export const getAllRequests = async (url, pathName, token) => {
     try {
         const response = await axios.get(`${url}${pathName}`,
             {

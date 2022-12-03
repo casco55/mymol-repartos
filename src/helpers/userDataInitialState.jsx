@@ -3,5 +3,8 @@ export const userDataInitialState = {
     nombre: "",
     apellido: "",
     id_localidad: "",
+    nombre_localidad: "",
+    id_clasificasion: "",
+    nombre_clasificacion: "",
     token: ""
 }
