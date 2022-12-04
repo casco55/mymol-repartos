@@ -7,9 +7,10 @@ export const postOne = async (url, pathName, data, token) => {
                 'x-token': token
             }
         });
-        return response.data;
+        console.log(response);
 
     } catch (error) {
+        console.log('error', error);
         return false
     }
 

@@ -8,6 +8,7 @@ export const getAllRequests = async (url, pathName, token) => {
                     'x-token': token
                 }
             });
+        console.log(response);
         return response.data;
     } catch (error) {
         return false;

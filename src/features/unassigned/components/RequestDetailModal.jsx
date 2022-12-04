@@ -1,20 +1,29 @@
 import { AiOutlineCloseCircle } from 'react-icons/ai';
-import { pathNameUnassigned } from '../../../helpers/endPoints';
+import { pathNameForDelivery, pathNameTekDelivery } from '../../../helpers/endPoints';
 import { useRequestDetails } from '../hooks/useRequestDetails';
-/* import { useRequestDetails } from '../hooks/useRequestDetails'; */
+import { useTakeDelivery } from '../hooks/useTakeDelivery';
 
 export const RequestModalDetail = ({
     id,
-    closeRequestModalDetail
+    idNotification,
+    closeRequestModalDetail,
+    listFn
 }) => {
     const {
         requestDetails
-    } = useRequestDetails(id, pathNameUnassigned);
+    } = useRequestDetails(id, pathNameForDelivery);
     const { solicitud, detalles } = requestDetails;
     const { nombre_usuario, apellido_usuario, direccion, departamento, telefono_usuario, monto, tipo_solicitud, nombre_forma_pago, estado_pago, estado_solicitud, comentarios, nombre_reparto_manual, apellido_reparto_manual, telefono_reparto_manual, direccion_restaurante, nombre_restaurante } = solicitud;
+
+    const {
+        takeDelivery
+    } = useTakeDelivery(id, pathNameTekDelivery, closeRequestModalDetail, listFn);
     return (
         <>
-            <div className="position-absolute top-0 bg-light full-height col-12">
+            <div
+                className="position-absolute top-0 bg-light full-height col-12"
+                id={`requestModalDetail${id}`}
+            >
                 <div className="d-flex flex-row justify-content-end">
                     <AiOutlineCloseCircle className="cursor-pointer" size={48} onClick={() => closeRequestModalDetail()} />
                 </div>
@@ -91,8 +100,16 @@ export const RequestModalDetail = ({
                         </div>
                     }
                 </div>
-
-
+                {id !== idNotification &&
+                    <div className="d-flex flex-row justify-content-center">
+                        <button
+                            className="btn btn-primary"
+                            onClick={() => takeDelivery()}
+                        >
+                            Tomar entrega
+                        </button>
+                    </div>
+                }
             </div>
         </>
     )

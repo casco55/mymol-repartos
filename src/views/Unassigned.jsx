@@ -1,15 +1,16 @@
 import { RequestModalDetail } from "../features/unassigned/components/RequestDetailModal";
 import { UnassignedTable } from "../features/unassigned/components/UnassignedTable";
 import { unassignedTableCols } from "../features/unassigned/helpers/UnassignedTableCols";
-import { pathNameUnassigned } from "../helpers/endPoints"
+import { pathNameForDelivery } from "../helpers/endPoints"
 import { useData } from "../hooks/useData"
 import { useRequestModalDetail } from "../hooks/useRequestModalDetail";
 
 export const Unassigned = () => {
     const {
         data,
+        idNotification,
         dataList
-    } = useData(pathNameUnassigned)
+    } = useData(pathNameForDelivery)
 
     const {
         displayRequestModalDetail,
@@ -17,7 +18,8 @@ export const Unassigned = () => {
         handleDisplayRequestModalDetail,
         handleCloseRequestModalDetail
     } = useRequestModalDetail();
-    console.log(data);
+
+
 
     return (
         <>
@@ -34,7 +36,9 @@ export const Unassigned = () => {
                 {displayRequestModalDetail &&
                     <RequestModalDetail
                         id={idRequestModalDetail}
+                        idNotification={idNotification}
                         closeRequestModalDetail={handleCloseRequestModalDetail}
+                        listFn={dataList}
                     />
                 }
             </div>
