@@ -135,7 +135,7 @@ export const RequestModalDetailSelfAssigned = ({
                     </button>
                 </div>
                 {displayConfirmation &&
-                    <div className="d-flex flex-column position-fixed top-0 bg-light full-height col-12">
+                    <div className="position-fixed top-0 d-flex flex-column bg-light full-height col-12 z-index-20">
                         <div className="d-flex flex-row justify-content-end">
                             <AiOutlineCloseCircle className="cursor-pointer" size={48} onClick={() => handleCloseConfirmation()} />
                         </div>
@@ -161,7 +161,7 @@ export const RequestModalDetailSelfAssigned = ({
                     </div>
                 }
                 {displayConfirmationCancel &&
-                    <div className="position-fixed top-0 d-flex flex-column bg-light full-height col-12">
+                    <div className="position-fixed top-0 d-flex flex-column bg-light full-height col-12 z-index-20">
 
                         <div className="d-flex flex-row justify-content-end">
                             <AiOutlineCloseCircle className="cursor-pointer" size={48} onClick={() => handleCloseConfirmationCancel()} />
