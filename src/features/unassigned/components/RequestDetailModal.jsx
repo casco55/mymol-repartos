@@ -21,7 +21,7 @@ export const RequestModalDetail = ({
     return (
         <>
             <div
-                className="position-fixed top-0 bg-light full-height col-12"
+                className="position-fixed top-0 bg-light overflow-y-auto pb-3 col-12"
                 id={`requestModalDetail${id}`}
             >
                 <div className="d-flex flex-row justify-content-end">
