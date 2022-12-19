@@ -32,7 +32,7 @@ export const RequestModalDetailSelfAssigned = ({
     return (
         <>
             <div
-                className="position-absolute top-0 bg-light full-height col-12"
+                className="position-fixed top-0 bg-light full-height col-12"
                 id={`requestModalDetail${id}`}
             >
                 <div className="d-flex flex-row justify-content-end">
@@ -52,7 +52,7 @@ export const RequestModalDetailSelfAssigned = ({
                             <h3 className="mx-auto">Datos del Restaurante</h3>
                             <p className="ms-0">Restaurante: {nombre_restaurante}</p>
                             <p className="ms-0">Direccion:
-                                <a href={`https://www.google.com/maps/search/?q=${direccion_restaurante}`} target="_blank" rel="noreferrer">
+                                <a href={`https://www.google.com/maps/search/?api=1&query=${direccion_restaurante}`} target="_blank" rel="noreferrer">
                                     {direccion_restaurante}
                                 </a>
                             </p>
@@ -70,8 +70,8 @@ export const RequestModalDetailSelfAssigned = ({
                                         Nombre: {nombre_reparto_manual} {apellido_reparto_manual}
                                     </p>
                                 }
-                                <p className="ms-0"> Direccion:
-                                    <a href={`https://www.google.com/maps/search/?q=${direccion}`} target="_blank" rel="noreferrer">
+                                <p className="ms-0">Direccion:
+                                    <a href={`https://www.google.com/maps/search/?api=1&query=${direccion}`} target="_blank" rel="noreferrer">
                                         {direccion}
                                     </a>
                                 </p>
@@ -135,7 +135,7 @@ export const RequestModalDetailSelfAssigned = ({
                     </button>
                 </div>
                 {displayConfirmation &&
-                    <div className="d-flex flex-column position-absolute top-0 bg-light full-height col-12">
+                    <div className="d-flex flex-column position-fixed top-0 bg-light full-height col-12">
                         <div className="d-flex flex-row justify-content-end">
                             <AiOutlineCloseCircle className="cursor-pointer" size={48} onClick={() => handleCloseConfirmation()} />
                         </div>
@@ -161,7 +161,7 @@ export const RequestModalDetailSelfAssigned = ({
                     </div>
                 }
                 {displayConfirmationCancel &&
-                    <div className="d-flex flex-column position-absolute top-0 bg-light full-height col-12">
+                    <div className="position-fixed top-0 d-flex flex-column bg-light full-height col-12">
 
                         <div className="d-flex flex-row justify-content-end">
                             <AiOutlineCloseCircle className="cursor-pointer" size={48} onClick={() => handleCloseConfirmationCancel()} />

@@ -21,7 +21,7 @@ export const RequestModalDetail = ({
     return (
         <>
             <div
-                className="position-absolute top-0 bg-light full-height col-12"
+                className="position-fixed top-0 bg-light full-height col-12"
                 id={`requestModalDetail${id}`}
             >
                 <div className="d-flex flex-row justify-content-end">
@@ -40,7 +40,11 @@ export const RequestModalDetail = ({
                         <div className="d-flex flex-column">
                             <h3 className="mx-auto">Datos del Restaurante</h3>
                             <p className="ms-0">Restaurante: {nombre_restaurante}</p>
-                            <p className="ms-0">Direccion: {direccion_restaurante}</p>
+                            <p className="ms-0">Direccion:
+                                <a href={`https://www.google.com/maps/search/?api=1&query=${direccion_restaurante}`} target="_blank" rel="noreferrer">
+                                    {direccion_restaurante}
+                                </a>
+                            </p>
                         </div>
                         <div className="d-flex flex-column">
                             <h3 className="ms-0">Datos del cliente</h3>
@@ -55,7 +59,11 @@ export const RequestModalDetail = ({
                                         Nombre: {nombre_reparto_manual} {apellido_reparto_manual}
                                     </p>
                                 }
-                                <p className="ms-0">Dirección: {direccion}</p>
+                                <p className="ms-0">Direccion:
+                                    <a href={`https://www.google.com/maps/search/?api=1&query=${direccion}`} target="_blank" rel="noreferrer">
+                                        {direccion}
+                                    </a>
+                                </p>
                                 <p className="ms-0">Departamento: {departamento}</p>
                                 {tipo_solicitud === "web" &&
                                     <p className="ms-0">Teléfono: {telefono_usuario}</p>
