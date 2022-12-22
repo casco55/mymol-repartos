@@ -48,6 +48,12 @@ export const NavBar = () => {
                 <p className="me-2">
                     Bienvenido {nombre} {apellido}
                 </p>
+                <button
+                    className="btn btn-outline-danger"
+                    onClick={() => logOutFn()}
+                >
+                    Cerrar sesión
+                </button>
             </div>
 
         </>

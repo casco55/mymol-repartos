@@ -13,8 +13,7 @@ export const RequestModalDetail = ({
         requestDetails
     } = useRequestDetails(id, pathNameForDelivery);
     const { solicitud, detalles } = requestDetails;
-    const { nombre_usuario, apellido_usuario, direccion, departamento, telefono_usuario, monto, tipo_solicitud, nombre_forma_pago, estado_pago, estado_solicitud, comentarios, nombre_reparto_manual, apellido_reparto_manual, telefono_reparto_manual, direccion_restaurante, nombre_restaurante } = solicitud;
-
+    const { nombre_usuario, apellido_usuario, direccion, departamento, telefono_usuario, monto, monto_despacho, tipo_solicitud, nombre_forma_pago, estado_pago, estado_solicitud, comentarios, nombre_reparto_manual, apellido_reparto_manual, telefono_reparto_manual, direccion_restaurante, nombre_restaurante } = solicitud;
     const {
         takeDelivery
     } = useTakeDelivery(id, pathNameTekDelivery, closeRequestModalDetail, listFn);
@@ -77,6 +76,8 @@ export const RequestModalDetail = ({
                             <h3 className="ms-0">Datos de la solicitud</h3>
                             <div className="d-flex flex-column">
                                 <p className="ms-0">Monto: {monto}</p>
+                                <p className="ms-0">Monto de despacho: {monto_despacho}</p>
+                                <p className="ms-0">Monto total: {monto_despacho + monto}</p>
                                 <p className="ms-0">Tipo de solicitud: {tipo_solicitud}</p>
                                 <p className="ms-0">Forma de pago: {nombre_forma_pago}</p>
                                 <p className="ms-0">Estado de pago:
