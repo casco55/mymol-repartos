@@ -8,6 +8,7 @@ export const UnassignedRow = ({
     return (
         <>
             <tr>
+                <td>{id}</td>
                 <td>{nombre_restaurante}</td>
                 <td>{direccion_reparto}</td>
                 <td className="text-center">
