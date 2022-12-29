@@ -1,4 +1,3 @@
-
 export const pathNameLogin = "/repartos/auth/login/";
 export const pathNameForDelivery = "/repartos/despachos/";
 export const pathNameTekDelivery = "/repartos/despachos/asignar";

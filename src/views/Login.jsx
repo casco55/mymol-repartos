@@ -26,7 +26,7 @@ export const Login = () => {
 
                 <div className="container">
                     <div className="row d-flex flex-column justify-content-center">
-                        <h1 className="text-center">Administración</h1>
+                        <h1 className="text-center">Repartos</h1>
                     </div>
                     <hr />
                 </div>
