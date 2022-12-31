@@ -4,58 +4,61 @@ import { UserContext } from "../context/UserContext";
 import { useNavBarStyle } from "../hooks/useNavBarStyle";
 
 export const NavBar = () => {
-    const {
-        nombre,
-        apellido,
-        id_clasificacion,
-        logOutFn
-    } = useContext(UserContext);
-    const {
-        actualPath,
-        onSelectItem
-    } = useNavBarStyle();
-    return (
-        <>
+  const { nombre, apellido, id_clasificacion, logOutFn } =
+    useContext(UserContext);
+  const { actualPath, onSelectItem } = useNavBarStyle();
+  return (
+    <>
+      <div className="d-flex flex-row justify-content-between h-60">
+        <div
+          className={`col-4 d-flex justify-content-center border py-3 ${
+            actualPath === "/"
+              ? "text_mymol bg_mymol_header"
+              : "bg_header_box_mymol text_mymol"
+          }`}
+          onClick={() => onSelectItem()}
+        >
+          <NavLink className="d-flex flex-row nav-link" end to="/">
+            Pedidos
+          </NavLink>
+        </div>
+        <div
+          className={`col-4 d-flex justify-content-center border py-3 ${
+            actualPath === "/self_assigned"
+              ? "text_mymol bg_mymol_header"
+              : "bg_header_box_mymol text_mymol"
+          }`}
+          onClick={() => onSelectItem()}
+        >
+          <NavLink className="d-flex flex-row nav-link" end to="/self_assigned">
+            Mis repartos
+          </NavLink>
+        </div>
+        <div
+          className={`col-4 d-flex justify-content-center border py-3 ${
+            actualPath === "/reportes"
+              ? "text_mymol bg_mymol_header"
+              : "bg_header_box_mymol text_mymol"
+          }`}
+          onClick={() => onSelectItem()}
+        >
+          <NavLink className="d-flex flex-row nav-link" end to="/reportes">
+            Reportes
+          </NavLink>
+        </div>
+      </div>
 
-            <div className="d-flex flex-row">
-                <div
-                    className={`col-4 d-flex justify-content-center border ${actualPath === '/' ? 'bg-dark text-light' : ''}`}
-                    onClick={() => onSelectItem()}
-                >
-                    <NavLink className="d-flex flex-row nav-link" end to='/'>
-                        Pedidos
-                    </NavLink>
-                </div>
-                <div
-                    className={`col-4 d-flex justify-content-center border ${actualPath === '/self_assigned' ? 'bg-dark text-light' : ''}`}
-                    onClick={() => onSelectItem()}
-                >
-                    <NavLink className="d-flex flex-row nav-link" end to='/self_assigned'>
-                        Mis repartos
-                    </NavLink>
-                </div>
-                <div
-                    className={`col-4 d-flex justify-content-center border ${actualPath === '/reportes' ? 'bg-dark text-light' : ''}`}
-                    onClick={() => onSelectItem()}
-                >
-                    <NavLink className="d-flex flex-row nav-link" end to='/reportes'>
-                        Reportes
-                    </NavLink>
-                </div>
-            </div>
-
-            <div className="g-0 mt-1 d-flex justify-content-end">
-                <p className="me-2">
-                    Bienvenido {nombre} {apellido}
-                </p>
-                <button
-                    className="btn btn-outline-danger"
-                    onClick={() => logOutFn()}
-                >
-                    Cerrar sesión
-                </button>
-            </div>
-
-        </>
-    )
-}
+      <div className="g-0 d-flex flex-column bg_mymol">
+        <p className="d-flex  text_mymol_dark mx-auto mb-2 mt-0">
+          Bienvenido {nombre} {apellido}
+        </p>
+        <button
+          className="btn bg_mymol_header text_mymol  mx-auto my-0"
+          onClick={() => logOutFn()}
+        >
+          Cerrar sesión
+        </button>
+      </div>
+    </>
+  );
+};
