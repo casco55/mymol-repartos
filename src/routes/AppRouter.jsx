@@ -11,7 +11,7 @@ export const AppRouter = memo(({ isLoggedIn }) => {
   return (
     <>
       <Router>
-        <div className="row g-0 bg_mymol full-height">
+        <div className="row g-0">
           {isLoggedIn && <NavBar />}
           <div className="col-12 g-0">
             <Routes basename="/">

@@ -17,7 +17,7 @@ export const Unassigned = () => {
 
   return (
     <>
-      <div className="row g-0 position-relative d-flex flex-column">
+      <div className="row g-0 position-relative d-flex flex-column col-12 bg_white border rounded-4">
         <div className="col-12 d-flex flex-row justify-content-between">
           {!data && <h1>Hubo un error</h1>}
           {data.length === 0 && <h1>No hay productos</h1>}

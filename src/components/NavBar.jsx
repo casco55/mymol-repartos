@@ -47,8 +47,7 @@ export const NavBar = () => {
           </NavLink>
         </div>
       </div>
-
-      <div className="g-0 d-flex flex-column bg_mymol">
+      <div className="g-0 d-flex flex-column bg_mymol mb-3">
         <p className="d-flex  text_mymol_dark mx-auto mb-2 mt-0">
           Bienvenido {nombre} {apellido}
         </p>
