@@ -17,7 +17,7 @@ export const Reports = () => {
   return (
     <>
       {/* formulario fecha inicio fecha termino */}
-      <div>
+      <div className="col-11 mx-auto">
         <div className="form-group">
           <label htmlFor="fechaInicio">Fecha Inicio</label>
           <input
@@ -40,24 +40,33 @@ export const Reports = () => {
             onChange={handleChange}
           />
         </div>
-        <button onClick={getDeliveredReport} className="btn btn-primary">
-          Entregados
-        </button>
-        <button onClick={getFailedReport} className="btn btn-primary">
-          Fallidos
-        </button>
+        <div className="col-12 mx-auto d-flex flex-row justify-content-around mt-5">
+          <button
+            onClick={getDeliveredReport}
+            className="btn bg_mymol_header text_mymol"
+          >
+            Entregados
+          </button>
+          <button onClick={getFailedReport} className="btn btn-danger">
+            Fallidos
+          </button>
+        </div>
       </div>
       {data && data.length > 0 && (
-        <CSVLink
-          data={data}
-          headers={headers}
-          filename={`reporte_${reportType}.csv`}
-          className="btn btn-primary"
-          separator=";"
-          target="_blank"
-        >
-          Descargar {reportType}
-        </CSVLink>
+        <>
+          <div className="col-11 mx-auto d-flex flex-row justify-content-center">
+            <CSVLink
+              data={data}
+              headers={headers}
+              filename={`reporte_${reportType}.csv`}
+              className="btn btn-success mt-5 mx-auto"
+              separator=";"
+              target="_blank"
+            >
+              Descargar {reportType}
+            </CSVLink>
+          </div>
+        </>
       )}
     </>
   );
