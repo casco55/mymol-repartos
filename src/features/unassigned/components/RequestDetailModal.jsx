@@ -66,7 +66,9 @@ export const RequestModalDetail = ({
                 <h5 className="ms-0 text_mymol_orange">
                   Datos del Restaurante
                 </h5>
-                <p className="ms-0">Restaurante: {nombre_restaurante}</p>
+                <p className="ms-0 my-1 font_15">
+                  Restaurante: {nombre_restaurante}
+                </p>
                 <p className="ms-0">
                   Direccion:
                   <a

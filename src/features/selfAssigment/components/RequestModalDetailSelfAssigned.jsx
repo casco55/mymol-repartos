@@ -83,7 +83,9 @@ export const RequestModalDetailSelfAssigned = ({
                   Datos del Restaurante
                 </h5>
                 <div className="d-flex flex-column text_mymol_dark">
-                  <p className="ms-0 my-1">Restaurante: {nombre_restaurante}</p>
+                  <p className="ms-0 my-1 font_15">
+                    Restaurante: {nombre_restaurante}
+                  </p>
                   <p className="ms-0 my-1">
                     Direccion:
                     <a
