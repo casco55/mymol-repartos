@@ -1,12 +1,19 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
+import { useLogOut } from "../hooks/useLogOut";
 import { useNavBarStyle } from "../hooks/useNavBarStyle";
+import { LogOutConfirmation } from "./LogOutConfirmation";
 
 export const NavBar = () => {
-  const { nombre, apellido, id_clasificacion, logOutFn } =
-    useContext(UserContext);
+  const { nombre, apellido, id_clasificacion } = useContext(UserContext);
   const { actualPath, onSelectItem } = useNavBarStyle();
+  const {
+    displayLogOutConfirmation,
+    handleShowLogOutConfirmation,
+    handleCloseLogOutConfirmation,
+    handleLogOut,
+  } = useLogOut();
   return (
     <>
       <div className="d-flex flex-row justify-content-between h-60">
@@ -53,11 +60,17 @@ export const NavBar = () => {
         </p>
         <button
           className="btn bg_mymol_header text_mymol  mx-auto my-0"
-          onClick={() => logOutFn()}
+          onClick={handleShowLogOutConfirmation}
         >
           Cerrar sesión
         </button>
       </div>
+      {displayLogOutConfirmation && (
+        <LogOutConfirmation
+          handleCloseLogOutConfirmation={handleCloseLogOutConfirmation}
+          handleLogOut={handleLogOut}
+        />
+      )}
     </>
   );
 };
