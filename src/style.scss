@@ -101,3 +101,51 @@ body{
     font-size: 1.5rem;
     font-weight: bolder;
 }
+.img_cover {
+    width: 100%;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
+.img_cover_login {
+    height: 100vh;
+    width: 100%;
+}
+
+.over_img_absolute {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+.display-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.border_x_circle {
+    border-radius: 2rem;
+}
+
+.h_3rem {
+    height: 3rem;
+}
+
+.bg_login_button {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 104, 45, 1) 30%, rgba(255, 104, 45, 1) 100%);
+}
+
+.login_shadow {
+    -webkit-box-shadow: 18px 24px 41px 1px rgba(0, 0, 0, 0.76);
+    -moz-box-shadow: 18px 24px 41px 1px rgba(0, 0, 0, 0.76);
+    box-shadow: 18px 24px 41px 1px rgba(0, 0, 0, 0.76);
+}
